@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <div id="app">
+      {{addId()}}
+      <p>{{name}}</p>
+      <p>{{id}}</p>
+      <p>{{name}}</p>
+      <p>{{id}}</p> 
+    </div> -->
+    <div id="counter">
+      <p>counter : {{counter}}</p>
+      <button @click="addConter">Add</button>
+      <button @click="minusCounter">minus</button>
+      <hr />
+      <input @change="showValue" type="text" />
+      <p>{{value}}</p>
+      <button @click="showParam(`mahdi`)">param</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+    <script>
+      // new Vue({
+      //   el: "#app",
+      //   data: {
+      //     name: "mahdi",
+      //     id: 32,
+      //   },
+      //   methods: {
+      //     addId:function(){
+      //       this.id = 21;
+      //     },
+      //   },
+      // });
+      const vm = new Vue({
+        el: "#counter",
+        data: {
+          counter: 0,
+          value: " ",
+        },
+        methods: {
+          addConter: function () {
+            this.counter++;
+          },
+          minusCounter: function () {
+            if (this.counter > 0) {
+              this.counter--;
+            }
+          },
+          showValue: function (e) {
+            this.value = e.target.value;
+          },
+          showParam: function (param) {
+            console.log(param);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

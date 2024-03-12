@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+<div id="app">
+    <input type="text" v-model = "valueTask">
+    <button @click="addTask">add</button>
+    <ul>
+        <li v-for="item in task">{{item.job}}</li>
+    </ul>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+    <script>
+        const newTAsk = []
+      const vm = new Vue({
+        el: "#app",
+        data: {
+            valueTask : " ",
+          task: [
+            {
+              id: 1,
+              job: "work",
+            },
+            {
+              id: 2,
+              job: "eat",
+            },
+          ],
+        },
+        methods : {
+            addTask : function(){
+                 newTAsk.id =2;
+                 newTAsk.job = this.valueTask
+                 this.task.push( newTAsk) 
+                 console.log(this.task)
+            }
+        }
+      });
+    </script>
+  </body>
+</html>

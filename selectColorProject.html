@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .size{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <div id="app">
+        <h1 :style="{color : mainColor}">
+            show
+        </h1>
+        <div v-for="item in colors" :style="{backgroundColor : item}" @click="addColor(item)" class="size" @click=""></div>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          colors :["red" , "green" , "blue" ],
+          mainColor : ""          
+        },
+        methods: {
+            addColor : function(color){
+                this.mainColor = color;
+            }
+        },
+      });
+    </script>
+</body>
+</html>
