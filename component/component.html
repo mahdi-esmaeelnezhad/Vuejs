@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">    
+        <!-- <p>{{message}}</p> -->
+        <!-- <add-btn></add-btn> -->
+        <!-- <divUser v-for="item in user" name="{{item.name}}"></divUser> -->
+        <!-- <div-user userName= 'mahdi'></div-user> -->
+        <!-- <blog-post title="My journey with Vue"></blog-post> -->
+        <div-user v-for="item in user" :name = "item.name" :age="item.age">
+          <h1 slot="title">mahdi esmaeelnezhad</h1>
+          <p slot="userName">sara</p>
+        </div-user>
+      </div>
+      <div id="app2">
+        <box></box>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+    <script src="./component.js"></script>
+</body>
+</html>
